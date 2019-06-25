@@ -107,6 +107,7 @@ docker-compose build
 
 Run
 ```
-docker-compose run --rm hub bash
+docker-compose up -d --force-recreate
+docker-compose exec up bash
 ```
 

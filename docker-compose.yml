@@ -3,10 +3,13 @@ version: "3.7"
 services:
   hub:
     image: robosat-jupyter
-    build:
-      context: "."
+    command: "jupyter notebook --ip=0.0.0.0 --allow-root"
+    build: {context: "."}
     volumes:
     - ./container_mount:/app/container_mount
     environment:
     - "DESIRED_ZOOM_LEVEL=19"
     - "PUBLIC_IP=127.0.0.1"
+    ports:
+    - "127.0.0.1:5000:5000"
+    - "127.0.0.1:8888:8888"
