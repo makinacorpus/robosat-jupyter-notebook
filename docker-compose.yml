@@ -1,0 +1,12 @@
+---
+version: "3.7"
+services:
+  hub:
+    image: robosat-jupyter
+    build:
+      context: "."
+    volumes:
+    - ./container_mount:/app/container_mount
+    environment:
+    - "DESIRED_ZOOM_LEVEL=19"
+    - "PUBLIC_IP=127.0.0.1"
